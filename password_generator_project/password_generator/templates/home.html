@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: skyblue;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .container {
+            text-align: center;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 8px 15px 25px violet;
+            width: 90%;
+            max-width: 500px;
+        }
+        
+        h1 {
+            color: #000000;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        
+        input[type="number"] {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            background-color: #ffffff;
+            color: red;
+            width: 50%;
+            text-align: center;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .checkbox-item {
+            width: 45%;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            background-color:skyblue;
+            color:black;
+            border: 1px solid #000000;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+        
+        .checkbox-item:hover {
+            background-color: dodgerblue;
+            color: black
+        }
+        
+        button {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        button:hover {
+            background-color: deepskyblue;
+            color: black;
+        }
+        
+        .password {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #000000;
+            margin: 20px 0;
+            word-wrap: break-word;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            background-color: #000000;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        a:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        #automatic{
+            color:Black
+        }
+        #automatic:hover{
+            background-color:white;
+            color:blue;
+        }
+        #uppercase:hover{
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id = "automatic">Automatic Password Generator</h1>
+        <form action="/generate-password/" method="get">
+            <div class="input-group">
+                <label for="length">Password Length:</label>
+                <input type="number" name="length" id="length" min="4" max="30" value="10">
+            </div>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" name="uppercase" id="uppercase">
+                    <label for="uppercase">Include Uppercase Letters</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" name="lowercase" id="lowercase" checked>
+                    <label for="lowercase">Include Lowercase Letters</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" name="numbers" id="numbers">
+                    <label for="numbers">Include Numbers</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" name="symbols" id="symbols">
+                    <label for="symbols">Include Symbols</label>
+                </div>
+            </div>
+            <button type="submit">Generate Password</button>
+        </form>
+    </div>
+</body>
+</html>
